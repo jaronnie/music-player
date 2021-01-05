@@ -1,0 +1,21 @@
+Program = "music-player-use-go-vue"
+
+[mysql]
+
+ip = "47.95.1.229"
+
+port = "3306"
+
+username = "mysql_nj_jay_com"
+
+password = "000000"
+
+database = "mysql_nj_jay_com"
+
+[redis]
+
+ip = "47.95.1.229"
+
+port = "6379"
+
+
