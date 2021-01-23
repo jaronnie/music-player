@@ -1,21 +1,14 @@
 Program = "music-player-use-go-vue"
 
 [mysql]
-
-ip = "localhost"
-
+ip = "nj-jay.com"
 port = "3306"
-
-username = ""
-
-password = ""
-
-database = ""
+username = "mysql_nj_jay_com"
+password = "000000"
+database = "mysql_nj_jay_com"
 
 [redis]
-
-ip = "localhost"
-
+ip = "nj-jay.com"
 port = "6379"
 
 
