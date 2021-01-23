@@ -1,0 +1,26 @@
+#log {
+    width:230px;
+    height: 360px;
+    margin: 0;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    position: absolute;
+    top: 2em;
+    left: 0.5em;
+    right: 0.5em;
+    bottom: 3em;
+    overflow: auto;
+}
+
+#form {
+    padding: 0 0.5em 0 0.5em;
+    margin: 0;
+    position: absolute;
+    bottom: 4em;
+    left: 2px;
+    width: auto;
+    overflow: hidden;
+}
+
+#msg {
+    width:230px
+}

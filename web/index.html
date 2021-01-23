@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>vue-go-player</title>
+  <link href="./css/chat.css" rel="stylesheet" type="text/css" />
+  <link href="./css/song.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="play_wrap" id="player">
+      <div class="search_bar">
+         &nbsp; 访问量: {{click}}
+        <input type="text" placeholder="输入要搜索的Music" autocomplete="off" v-model='query' @keyup.enter="searchMusic" />
+      </div>
+      <div class="center_con">
+        <!-- 搜索歌曲列表 -->
+        <div class='song_wrapper' ref='song_wrapper'>
+          <ul class="song_list">
+            <li v-for="item in musicList">
+              <!-- 点击放歌 -->
+              <a href="javascript:;" @click="playMusic(item.id)"></a>
+              <b>{{item.name}}</b>
+              <span>
+                <i></i>
+              </span>
+            </li>
+          </ul>
+          <img src="./img/line.png" class="switch_btn" alt="">
+        </div>
+        <!-- 歌曲信息容器 -->
+        <div class="player_con" :class="{playing:isPlay}">
+          <img src="./img/player_bar.png" class="play_bar" />
+          <!-- 黑胶碟片 -->
+          <img src="./img/disc.png" class="disc autoRotate" />
+          <img :src="coverUrl==''?'https://picture.nj-jay.com/avatar.jpg':coverUrl" class="cover autoRotate" />
+        </div>
+        <!-- 评论容器 -->
+        <div class="comment_wrapper" ref='comment_wrapper'>
+          <h5 class='title'>聊天室</h5>
+          
+          <br/>
+          <div id="log"></div>
+          <form id="form">
+          <input type="text" id="msg" size="64" autofocus />
+          </form>
+
+          <img src="./img/line.png" class="right_line">
+        </div>
+      </div>
+      <div class="audio_con">
+        <audio ref='audio' @play="play" @pause="pause" :src="musicUrl" controls autoplay loop class="myaudio"></audio>
+      </div>
+      <div class="video_con" v-show="showVideo">
+        <video ref='video' :src="mvUrl" controls="controls"></video>
+        <div class="mask" @click="closeMv"></div>
+      </div>
+    </div>
+  </div>
+  <script src="./lib/vue.js"></script>
+  <script src="./lib/axios.min.js"></script>
+  <script src="./js/music.js"></script>
+  <script src="./js/chat.js"></script>
+</body>
+</html>
