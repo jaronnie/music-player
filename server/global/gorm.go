@@ -6,9 +6,6 @@ import (
 )
 
 var (
-
 	GMD_DB *gorm.DB
-
 	GMD_RD *redis.Client
-
 )
