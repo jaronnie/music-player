@@ -2,20 +2,24 @@ package initalize
 
 import (
 	"context"
-	"github.com/go-redis/redis/v8"
+	"github.com/spf13/viper"
 	"log"
 	"time"
+
+	"github.com/go-redis/redis/v8"
 )
 
 var ctx = context.Background()
 
 func ConnectRedis() *redis.Client {
+	ip := viper.GetString("redis.ip")
+	port := viper.GetString("redis.port")
 	client := redis.NewClient(&redis.Options{
-	Addr:"47.95.1.229:6379",
-	DB:0,
-	PoolSize: 100,
-	MinIdleConns: 20,
-	DialTimeout: 5 * time.Second,
+		Addr:         ip + ":" + port,
+		DB:           0,
+		PoolSize:     100,
+		MinIdleConns: 20,
+		DialTimeout:  5 * time.Second,
 	})
 
 	pong, err := client.Ping(ctx).Result()
@@ -32,4 +36,3 @@ func ConnectRedis() *redis.Client {
 
 	return client
 }
-

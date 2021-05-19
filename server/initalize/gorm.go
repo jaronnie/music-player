@@ -2,12 +2,13 @@ package initalize
 
 import (
 	"fmt"
+	"os"
+	"strings"
+
 	"github.com/nj-jay/music-player/server/model"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
-	"os"
-	"strings"
 )
 
 func GormMysql() *gorm.DB {
@@ -33,7 +34,8 @@ func GormMysql() *gorm.DB {
 func MysqlTables(db *gorm.DB) {
 	err := db.AutoMigrate(
 		&model.Song{},
-		)
+		&model.Login{},
+	)
 
 	if err != nil {
 		fmt.Println("register table error")

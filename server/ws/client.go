@@ -2,12 +2,13 @@ package ws
 
 import (
 	"bytes"
-	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
+	"github.com/nj-jay/music-player/server/service"
 )
 
 const (
@@ -40,10 +41,8 @@ var upgrader = websocket.Upgrader{
 // Client is a middleman between the websocket connection and the hub.
 type Client struct {
 	hub *Hub
-
 	// The websocket connection.
 	conn *websocket.Conn
-
 	// Buffered channel of outbound messages.
 	send chan []byte
 }
@@ -70,6 +69,7 @@ func (c *Client) readPump() {
 			break
 		}
 		message = bytes.TrimSpace(bytes.Replace(message, newline, space, -1))
+		service.CacheMessage(string(message))
 		c.hub.broadcast <- message
 	}
 }

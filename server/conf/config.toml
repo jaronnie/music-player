@@ -1,14 +1,14 @@
 Program = "music-player-use-go-vue"
 
 [mysql]
-ip = "nj-jay.com"
+ip = "gocloudcoder.com"
 port = "3306"
-username = "mysql_nj_jay_com"
+username = "music-player"
 password = "000000"
-database = "mysql_nj_jay_com"
+database = "music-player"
 
 [redis]
-ip = "nj-jay.com"
+ip = "gocloudcoder.com"
 port = "6379"
 
 

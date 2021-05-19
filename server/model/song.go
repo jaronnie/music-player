@@ -12,3 +12,9 @@ func NewSong(name, url string) *Song {
 		Url: url,
 	}
 }
+
+//User信息
+type Login struct {
+	Username string `json:"username" gorm:"primaryKey"`
+	Password string	`json:"password"`
+}
