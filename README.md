@@ -6,4 +6,4 @@
 
 还可以在线聊天哦
 
-在线体验: http://nj-jay.com/music/web
+在线体验: http://music.gocloudcoder.com
