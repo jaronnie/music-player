@@ -2,6 +2,7 @@ window.onload = function () {
     let conn;
     let msg = document.getElementById("msg");
     let log = document.getElementById("log");
+
     function appendLog(item) {
         let doScroll = log.scrollTop > log.scrollHeight - log.clientHeight - 1;
         log.appendChild(item);
@@ -16,7 +17,8 @@ window.onload = function () {
         if (!msg.value) {
             return false;
         }
-        conn.send(msg.value);
+        let user = localStorage.getItem('currentUser_name');
+        conn.send(user + ":" + msg.value);
         msg.value = "";
         return false;
     };

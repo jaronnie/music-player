@@ -38,15 +38,25 @@
           <img src="./img/disc.png" class="disc autoRotate" />
           <img :src="coverUrl==''?'https://picture.nj-jay.com/avatar.jpg':coverUrl" class="cover autoRotate" />
         </div>
-        <!-- 评论容器 -->
+        <!-- 聊天室 -->
         <div class="comment_wrapper" ref='comment_wrapper'>
           <h5 class='title'>聊天室</h5>
-          
+
           <br/>
-          <div id="log"></div>
-          <form id="form">
-          <input type="text" id="msg" size="64" autofocus />
-          </form>
+          <div v-show="notLogin">
+            <input type="text" v-model="loginForm.username" placeholder="用户名"/>
+            <input type="text" v-model="loginForm.password" placeholder="密码"/>
+            <br/>
+            <br/>
+            <button @click="login" type="button">登录</button>
+            <button @click="registerUser" type="button">注册</button>
+          </div>
+          <div v-show="hasLogin">
+            <div id="log"></div>
+            <form id="form">
+              <input type="text" id="msg" size="64" autofocus />
+            </form>
+          </div>
 
           <img src="./img/line.png" class="right_line">
         </div>
@@ -62,7 +72,7 @@
   </div>
   <script src="./lib/vue.js"></script>
   <script src="./lib/axios.min.js"></script>
-  <script src="./js/music.js"></script>
+  <script src="./js/function.js"></script>
   <script src="./js/chat.js"></script>
 </body>
 </html>
