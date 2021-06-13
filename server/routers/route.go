@@ -2,9 +2,9 @@ package routers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/nj-jay/music-player/server/controllers"
-	"github.com/nj-jay/music-player/server/middlewares"
-	"github.com/nj-jay/music-player/server/ws"
+	"github.com/jaronnie/music-player/server/controllers"
+	"github.com/jaronnie/music-player/server/middlewares"
+	"github.com/jaronnie/music-player/server/ws"
 )
 
 func LoadRouter(e *gin.Engine) {

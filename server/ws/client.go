@@ -8,7 +8,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
-	"github.com/nj-jay/music-player/server/service"
+	"github.com/jaronnie/music-player/server/service"
 )
 
 const (

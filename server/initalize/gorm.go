@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/nj-jay/music-player/server/model"
+	"github.com/jaronnie/music-player/server/model"
 	"github.com/spf13/viper"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -18,7 +18,7 @@ func GormMysql() *gorm.DB {
 	port := viper.GetString("mysql.port")
 	database := viper.GetString("mysql.database")
 	path := strings.Join([]string{username, ":", password,
-		"@(", ip, ":", port, ")/", database, "?charset=utf8&parseTime=true&loc=Local"}, "")
+		"@tcp(", ip, ":", port, ")/", database, "?charset=utf8&parseTime=true&loc=Local"}, "")
 
 	if db, err := gorm.Open(mysql.Open(path), &gorm.Config{}); err != nil {
 		os.Exit(0)

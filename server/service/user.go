@@ -3,10 +3,10 @@ package service
 import (
 	"errors"
 
-	"github.com/nj-jay/music-player/server/global"
-	"github.com/nj-jay/music-player/server/middlewares"
-	"github.com/nj-jay/music-player/server/model"
-	"github.com/nj-jay/music-player/server/util"
+	"github.com/jaronnie/music-player/server/global"
+	"github.com/jaronnie/music-player/server/middlewares"
+	"github.com/jaronnie/music-player/server/model"
+	"github.com/jaronnie/music-player/server/util"
 )
 
 type Login model.Login

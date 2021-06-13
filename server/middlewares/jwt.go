@@ -9,7 +9,7 @@ import (
 
 	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
-	"github.com/nj-jay/music-player/server/model"
+	"github.com/jaronnie/music-player/server/model"
 )
 
 type MyClaims struct {

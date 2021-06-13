@@ -1,4 +1,4 @@
-module github.com/nj-jay/music-player/server
+module github.com/jaronnie/music-player/server
 
 go 1.14
 

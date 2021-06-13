@@ -4,11 +4,11 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	"github.com/nj-jay/music-player/server/global"
-	"github.com/nj-jay/music-player/server/initalize"
-	"github.com/nj-jay/music-player/server/middlewares"
-	"github.com/nj-jay/music-player/server/routers"
-	"github.com/nj-jay/music-player/server/ws"
+	"github.com/jaronnie/music-player/server/global"
+	"github.com/jaronnie/music-player/server/initalize"
+	"github.com/jaronnie/music-player/server/middlewares"
+	"github.com/jaronnie/music-player/server/routers"
+	"github.com/jaronnie/music-player/server/ws"
 )
 
 func main() {
@@ -20,8 +20,7 @@ func main() {
 	r.Use(middlewares.Cors())
 	go ws.HUB.Run()
 	routers.LoadRouter(r)
-	//err := http.ListenAndServeTLS(":8081", "conf/api.nj-jay.com_bundle.crt", "conf/api.nj-jay.com.key", r)
-	err := r.Run(":8081")
+	err := r.Run(":8082")
 	if err != nil {
 		log.Fatal("run err")
 	}

@@ -5,7 +5,7 @@ import (
 	"io"
 	"log"
 
-	"github.com/nj-jay/music-player/server/global"
+	"github.com/jaronnie/music-player/server/global"
 )
 
 //count.go

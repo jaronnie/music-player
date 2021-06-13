@@ -4,8 +4,8 @@ import (
 	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/nj-jay/music-player/server/model"
-	"github.com/nj-jay/music-player/server/service"
+	"github.com/jaronnie/music-player/server/model"
+	"github.com/jaronnie/music-player/server/service"
 )
 
 func QueryAllData(c *gin.Context) {
