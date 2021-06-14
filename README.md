@@ -1,9 +1,26 @@
 # music-player
 
-喜欢周董的朋友们快过来玩啊
+音乐播放器 + 聊天室
 
-音乐播放器里面只有周董的歌
+## 技术栈
 
-还可以在线聊天哦
+* golang
+* gin
+* websocket
+* gorm
+* mysql
+* redis
+* axios
+* vue
 
-在线体验: http://music.gocloudcoder.com
+## 快速部署
+
+```shell
+git clone git@github.com:jaronnie/music-player.git
+cd music-player
+docker-compose up -d
+```
+
+## 在线体验
+
+http://music.gocloudcoder.com
