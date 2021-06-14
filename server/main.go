@@ -20,7 +20,7 @@ func main() {
 	r.Use(middlewares.Cors())
 	go ws.HUB.Run()
 	routers.LoadRouter(r)
-	err := r.Run(":8082")
+	err := r.Run(":8083")
 	if err != nil {
 		log.Fatal("run err")
 	}

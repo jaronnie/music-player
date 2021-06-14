@@ -1,5 +1,5 @@
 server {
-    listen       80;
+    listen       8080;
     server_name  localhost;
 
     location / {
@@ -7,7 +7,7 @@ server {
     }
 
     location /api {
-        proxy_pass   http://server:8082;
+        proxy_pass   http://server:8083;
     }
 
 }
