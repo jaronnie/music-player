@@ -1,4 +1,4 @@
-axios.defaults.baseURL = 'http://localhost:8082/api/v1';
+axios.defaults.baseURL = 'http://localhost:8083/api/v1';
 let app = new Vue({
     el: "#player",
     data: {
