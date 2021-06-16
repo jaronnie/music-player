@@ -37,9 +37,14 @@ localhost:8080
 | /api/v1/adduser   | 注册聊天室,返回token    | localhost:8083/api/v1/adduser           |
 | /api/v1/trueLogin | 登录接口                | localhost:8083/api/v1/trueLogin?token=  |
 
-## 待解决的问题
+## 解决的问题
 
 * 数据中存在中文无法显示，无法搜索.
+
+  > 已解决:
+  >
+  > * https://blog.csdn.net/jieyingxiao/article/details/103791706
+  > * https://stackoverflow.com/questions/53741107/mysql-in-docker-on-ubuntu-warning-world-writable-config-file-is-ignored
 
 ## 在线体验
 
