@@ -21,15 +21,6 @@ cd music-player
 docker-compose up -d
 ```
 
-### 插入数据
-
-```shell
-docker exec -it music-player-mysql sh
-mysql -uroot -p123456
-use music-player;
-source /music-player/data/songs.sql
-```
-
 ## 访问
 
 ```

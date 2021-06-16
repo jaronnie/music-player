@@ -14,7 +14,7 @@ services:
     image: mysql:5.7
     container_name: music-player-mysql
     volumes:
-      - ./server/data:/music-player/data
+      - ./server/data:/docker-entrypoint-initdb.d
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: "123456"
