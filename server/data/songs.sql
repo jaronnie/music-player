@@ -1,3 +1,4 @@
+USE music-player;
 CREATE TABLE  IF NOT EXISTS `songs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` longtext DEFAULT NULL,
