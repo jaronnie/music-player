@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  selector:
+    matchLabels:
+      app: kube-music-player-app
+      tier: backend
+      track: stable
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: kube-music-player-app
+        tier: backend
+        track: stable
+    spec:
+      containers:
+        - name: kube-music-player-app
+          image: "gocloudcoder/kube-music-player-app:v1"
+          ports:
+            - name: http
+              containerPort: 8083

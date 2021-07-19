@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-db-redis
+  labels:
+    app: kube-db-redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-db-redis
+  template:
+    metadata:
+      labels:
+        app: kube-db-redis
+    spec:
+      containers:
+        - name: kube-db-redis
+          image: "redis:latest"
+          ports:
+            - containerPort: 6379

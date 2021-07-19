@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+spec:
+  selector:
+    app: kube-music-player-app
+    tier: frontend
+  ports:
+  - protocol: "TCP"
+    name: "kube-music-player-app"
+    port: 8083
+    targetPort: 8083
+  - protocol: "TCP"
+    name: "frontend"
+    port: 8080
+    targetPort: 8080
+  type: LoadBalancer

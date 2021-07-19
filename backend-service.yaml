@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-music-player-app
+spec:
+  selector:
+    app: kube-music-player-app
+    tier: backend
+  ports:
+  - protocol: TCP
+    port: 8083
+    targetPort: http

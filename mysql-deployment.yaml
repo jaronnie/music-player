@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kube-db-mysql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-db-mysql
+  template:
+    metadata:
+      labels:
+        app: kube-db-mysql
+    spec:
+      containers:
+      - name: kube-db-mysql
+        image: "mysql:5.7"
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+          - mountPath: /docker-entrypoint-initdb.d
+            name: kube-mysql-data
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "123456"
+        - name: MYSQL_DATABASE    # 新建的数据库
+          value: "music-player"
+      volumes:
+        - name: kube-mysql-data
+          hostPath:
+            path: /var/data/mysql
