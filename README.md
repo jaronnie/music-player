@@ -16,14 +16,14 @@
 ## docker-compose 部署
 
 ```shell
-git clone git@github.com:jaronnie/music-player.git
+git clone https://github.com/jaronnie/music-player.git
 cd music-player
 docker-compose up -d
 ```
 ## k8s 部署
 
 ```shell
-git clone git@github.com:jaronnie/music-player.git
+git clone https://github.com/jaronnie/music-player.git
 cd music-player
 git checkout k8s
 docker build -t "gocloudcoder/kube-music-player-app:v1" server/
