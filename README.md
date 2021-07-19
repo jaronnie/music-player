@@ -13,12 +13,29 @@
 * axios
 * vue
 
-## 快速部署
+## docker-compose 部署
 
 ```shell
 git clone git@github.com:jaronnie/music-player.git
 cd music-player
 docker-compose up -d
+```
+## k8s 部署
+
+```shell
+git clone git@github.com:jaronnie/music-player.git
+cd music-player
+git checkout k8s
+docker build -t "gocloudcoder/kube-music-player-app:v1" server/
+docker build -t "gocloudcoder/kube-nginx:v1" web/
+kubectl apply -f  mysql-deployment.yaml
+kubectl apply -f mysql-service.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f  redis-service.yaml
+kubectl apply -f backend-deployment.yaml
+kubectl apply -f backend-service.yaml
+kubectl apply -f  fronted-deployment.yaml
+kubectl apply -f fronted-service.yaml
 ```
 
 ## 访问
