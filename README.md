@@ -1,24 +1,19 @@
-# music-player
-
-音乐播放器 + 聊天室
-
-## 技术栈
-
-* golang
-* gin
-* websocket
-* gorm
-* mysql
-* redis
-* axios
-* vue
-
-## 快速部署
+## k8s部署
 
 ```shell
 git clone git@github.com:jaronnie/music-player.git
 cd music-player
-docker-compose up -d
+git checkout k8s
+docker build -t "gocloudcoder/kube-music-player-app:v1" server/
+docker build -t "gocloudcoder/kube-nginx:v1" web/
+kubectl apply -f  mysql-deployment.yaml
+kubectl apply -f mysql-service.yaml
+kubectl apply -f redis-deployment.yaml
+kubectl apply -f  redis-service.yaml
+kubectl apply -f backend-deployment.yaml
+kubectl apply -f backend-service.yaml
+kubectl apply -f  fronted-deployment.yaml
+kubectl apply -f fronted-service.yaml
 ```
 
 ## 访问
@@ -36,16 +31,3 @@ localhost:8080
 | /api/v1/song/url  | 播放音乐，根据id返回url | localhost:8083/api/v1/song/url?id=1     |
 | /api/v1/adduser   | 注册聊天室,返回token    | localhost:8083/api/v1/adduser           |
 | /api/v1/trueLogin | 登录接口                | localhost:8083/api/v1/trueLogin?token=  |
-
-## 解决的问题
-
-* 数据中存在中文无法显示，无法搜索.
-
-  > 已解决:
-  >
-  > * https://blog.csdn.net/jieyingxiao/article/details/103791706
-  > * https://stackoverflow.com/questions/53741107/mysql-in-docker-on-ubuntu-warning-world-writable-config-file-is-ignored
-
-## 在线体验
-
-http://music.gocloudcoder.com
