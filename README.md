@@ -3,6 +3,7 @@
 ```shell
 git clone https://github.com/jaronnie/music-player.git
 cd music-player
+mkdir -p /var/data/; cp -r ./server/data/mysql /var/data
 git checkout k8s
 docker build -t "gocloudcoder/kube-music-player-app:v1" server/
 docker build -t "gocloudcoder/kube-nginx:v1" web/

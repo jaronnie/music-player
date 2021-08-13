@@ -29,3 +29,4 @@ spec:
         - name: kube-mysql-data
           hostPath:
             path: /var/data/mysql
+            type: Directory
