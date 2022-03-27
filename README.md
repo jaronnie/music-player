@@ -20,26 +20,6 @@ git clone https://github.com/jaronnie/music-player.git
 cd music-player
 docker-compose up -d
 ```
-## k8s 部署
-
-```shell
-git clone https://github.com/jaronnie/music-player.git
-cd music-player
-mkdir -p /var/data/; cp -r ./server/data/mysql /var/data
-git fetch origin k8s
-git checkout k8s
-docker build -t "gocloudcoder/kube-music-player-app:v1" server/
-docker build -t "gocloudcoder/kube-nginx:v1" web/
-kubectl apply -f  mysql-deployment.yaml
-kubectl apply -f mysql-service.yaml
-kubectl apply -f redis-deployment.yaml
-kubectl apply -f  redis-service.yaml
-kubectl apply -f backend-deployment.yaml
-kubectl apply -f backend-service.yaml
-kubectl apply -f  fronted-deployment.yaml
-kubectl apply -f fronted-service.yaml
-```
-
 ## 访问
 
 ```
@@ -64,7 +44,3 @@ localhost:8080
   >
   > * https://blog.csdn.net/jieyingxiao/article/details/103791706
   > * https://stackoverflow.com/questions/53741107/mysql-in-docker-on-ubuntu-warning-world-writable-config-file-is-ignored
-
-## 在线体验
-
-http://music.gocloudcoder.com
